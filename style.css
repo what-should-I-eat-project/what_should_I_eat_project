@@ -57,7 +57,7 @@
     background-color: #fff;
     box-shadow: 0 5px rgb(234, 241, 241);
     width : 90%;
-    height: 600px;
+    /* height: 600px; */
     margin: 0px 90px 30px 90px;
     border-radius: 15px;
     transition: all 0.3s;
@@ -93,6 +93,23 @@
     padding: 50px 20px 10px 20px;
     text-align: center;
    }
+
+    .instructions-list{
+        padding-right: 50px;
+}
+    .instructions-list li::marker{
+    color:#ff4d00;
+}
+    .ingredients-list{
+        padding-right: 30px;
+    }
+    .ingredients-list li::marker{
+        color: #ff4d00;
+    }
+
+    .video-tutorial{
+        padding:0px 50px 30px 10px;
+    }
    @media  (max-width: 768px){
     .recipe-container {
         flex-direction:  column;
