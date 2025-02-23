@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,150 @@
     <script src="https://kit.fontawesome.com/a3b7c5030a.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
 
+    <!-- login and registration form-->
+    <div class="auth-container">
+        <div class="box">
+            <div class="inner-box">
+                <div class="forms-wrap">
+                    <form action="index.html" autocomplete="off" class="sign-in-form">
+                        <div class="logo">
+                            <img src="./img/logo.png" alt="Meals App" />
+                            <h4>🍽️ What Shout I Eat</h4>
+                        </div>
+
+                        <div class="heading">
+                            <h2>Welcome Back</h2>
+                            <h6>Not registred yet?</h6>
+                            <a href="#" class="toggle">Sign up</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input type="text" minlength="4" class="input-field name" autocomplete="off" required />
+                                <label>Name</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input type="password" minlength="4" class="input-field password" autocomplete="off"
+                                    required />
+                                <label>Password</label>
+                            </div>
+
+                            <input type="submit" value="Sign In" class="sign-btn" />
+
+                            <p class="text">
+                                Forgotten your password or you login datails?
+                                <a href="#">Get help</a> signing in
+                            </p>
+                        </div>
+                    </form>
+
+                    <form action="index.html" autocomplete="off" class="sign-up-form">
+                        <div class="logo">
+                            <img src="./img/logo.png" alt="easyclass" />
+                            <h4>🍽️ What Shout I Eat</h4>
+                        </div>
+
+                        <div class="heading">
+                            <h2>Get Started</h2>
+                            <h6>Already have an account?</h6>
+                            <a href="#" class="toggle">Sign in</a>
+                        </div>
+
+                        <div class="actual-form">
+                            <div class="input-wrap">
+                                <input type="text" minlength="4" class="input-field name-input" autocomplete="off"
+                                    required />
+                                <label>Name</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input type="email" class="input-field email-input" autocomplete="off" required />
+                                <label>Email</label>
+                            </div>
+
+                            <div class="input-wrap">
+                                <input type="password" minlength="4" class="input-field pass-input" autocomplete="off"
+                                    required />
+                                <label>Password</label>
+                            </div>
+
+                            <input type="submit" value="Sign Up" class="sign-btn" />
+
+                            <p class="text">
+                                By signing up, I agree to the
+                                <a href="#">Terms of Services</a> and
+                                <a href="#">Privacy Policy</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="carousel">
+                    <div class="images-wrapper">
+                        <img src="./img/image1.png" class="image img-1 show" alt="" />
+                        <img src="./img/image2.png" class="image img-2 " alt="" />
+                        <img src="./img/image3.png" class="image img-3" alt="" />
+                    </div>
+
+                    <div class="text-slider">
+                        <div class="text-wrap">
+                            <div class="text-group">
+                                <h2>Discover new flavors every day</h2>
+                                <h2>Cook with passion, eat with joy</h2>
+                                <h2>Share your culinary creations with the world</h2>
+                            </div>
+                        </div>
+
+                        <div class="bullets">
+                            <span class="active" data-value="1"></span>
+                            <span data-value="2"></span>
+                            <span data-value="3"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- This is the Hero Section    -->
-    <div class="hero">
-        <i class="fa-solid fa-burger"></i>
-        <h1> 🍽️ What Should I eat?</h1>
-        <p>click below to discover your next meal!</p>
-        <button class="btn">🍴 Suggest a Recipe</button>
+    <div class="recipe-Wrapper hidden">
+        <div class="hero">
+            <!-- <i class="fa-solid fa-burger"></i> -->
+            <img src="./img/logo.png" alt="easyclass" />
+            <h1> 🍽️ What Should I eat?</h1>
+            <p>click below to discover your next meal!</p>
+            <button class="btn mealSuggestion" id="mealSuggestion">🍴 Suggest a Recipe</button>
+        </div>
+
+        <!-- Recipe Display Section -->
+        <div class="recipe-display"></div>
+        <!-- note -->
+        <!-- we need to add tags area and catogory of the food -->
+        <!-- strCategory":"Seafood","strArea":"Italian -->
+        <div id="savedRecipes" class="savedRecipes"></div>
+
+        <!-- Buttons for Save and View Recipe -->
+        <input type="submit" value="Save Recipe" class="save-recipe-btn" id="save-recipe-btn" />
+        <!-- <input type="submit" value="View Saved Recipe" class="view-SavedBtn" id="viewSavedBtn" /> -->
     </div>
 
-    <!-- Recipe Display Section -->
 
-    <div class="recipe-display">
-        
-    </div>
-
-<footer>
-    <p>Powered by TheMealDB API ❤️</p>
-</footer>
+    <footer>
+        <p>Powered by TheMealDB API ❤️</p>
+    </footer>
 
 
 
 
 
 
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>
 
 </body>
+
 </html>
