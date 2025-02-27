@@ -131,6 +131,12 @@
     .recipe-info{
         width: 100%;
     }
+    .team-container{
+        display: flex;
+        flex-direction: column;
+    
+        
+   }
    }
       /* this hidden must be removed because we
        need to show both login/reg form and also 
@@ -523,7 +529,7 @@ border-radius: 1rem;
 
 
 .team-member {
-    border: 1px solid #ccc;
+    border: 1px ;
     padding: 10px;
     margin: 10px;
     text-align: center;
@@ -535,11 +541,41 @@ border-radius: 1rem;
 }
 
 #info{
-   display: flex; 
+   display: flex;
    justify-content: center;
-   align-items: center;
+   cursor: pointer;
+   
+}   
+.AboutUsButton {
+    display: flex;
+    background-color: #fb6728;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 20px;
+    border-color: white;
+    text-align: center;
+   
 
-}    
+} 
+.AboutUsButton:hover {
+    background-color: #f8510a;
+    transform: scale(1.0);
+
+}
+.team-container{
+    background-color: #fff;
+    margin: 0px 90px 30px 90px;
+    width: 85;
+    border-radius: 15px;
+    gap: 5px;
+    
+    
+}
+.teams{
+    border-style: none;
+    gap: 10px;
+
+}
    
 @media (max-width: 850px) {
 .box {
