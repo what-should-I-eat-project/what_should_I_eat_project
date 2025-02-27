@@ -235,7 +235,7 @@ function saveRecipe(recipe) {
     alert("Recipe saved");
 }
 
-document.getElementById("viewSavedBtn").addEventListener("click", viewSavedRecipes);
+// document.getElementById("viewSavedBtn").addEventListener("click", viewSavedRecipes);
 
 function viewSavedRecipes() {
     const users = JSON.parse(localStorage.getItem("users")) || {};
@@ -259,21 +259,21 @@ const teamData = [
         name: "Maria Yusuf",
         role: "Team Lead / Card Designer",
         photo: "./img/IMG_5632.jpeg", 
-        github: "https://github.com/maria", // Add real GitHub links
+        github: "https://github.com/Mariayusuf12", // Add real GitHub links
         bio: "Passionate about design and development."
     },
     {
         name: "Abdulahi",
         role: "API Creator / Designer",
         photo: "./img/abdulahi.jpg",
-        github: "https://github.com/abdulahi",
+        github: "https://github.com/abdillahi485",
         bio: "Loves working with APIs and backend development."
     },
     {
         name: "Abdirahman",
         role: "Login Creator",
         photo: "./img/abdirahman.jpg",
-        github: "https://github.com/abdirahman",
+        github: "https://github.com/Armanmoham23",
         bio: "Focused on authentication and security."
     }
 ];
@@ -286,10 +286,11 @@ aboutUsBtn.addEventListener('click', displayTeamInfo);
 function displayTeamInfo() {
     const teamContainer = document.getElementById('info');
     teamContainer.innerHTML = ''; // Clear previous content
-
+    
 
 
     teamData.forEach(member => {
+        console.log(member)
         const memberDiv = document.createElement('div');
         memberDiv.classList.add('team-member');
 
