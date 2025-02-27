@@ -253,3 +253,53 @@ function viewSavedRecipes() {
       `).join("");
     savedRecipesDiv.classList.remove("hidden");
 }
+// The button section
+const teamData = [
+    {
+        name: "Maria Yusuf",
+        role: "Team Lead / Card Designer",
+        photo: "./img/IMG_5632.jpeg", 
+        github: "https://github.com/maria", // Add real GitHub links
+        bio: "Passionate about design and development."
+    },
+    {
+        name: "Abdulahi",
+        role: "API Creator / Designer",
+        photo: "./img/abdulahi.jpg",
+        github: "https://github.com/abdulahi",
+        bio: "Loves working with APIs and backend development."
+    },
+    {
+        name: "Abdirahman",
+        role: "Login Creator",
+        photo: "./img/abdirahman.jpg",
+        github: "https://github.com/abdirahman",
+        bio: "Focused on authentication and security."
+    }
+];
+
+const aboutUsBtn = document.querySelector(".AboutUsButton");
+aboutUsBtn.addEventListener('click', displayTeamInfo);
+
+
+
+function displayTeamInfo() {
+    const teamContainer = document.getElementById('info');
+    teamContainer.innerHTML = ''; // Clear previous content
+
+
+
+    teamData.forEach(member => {
+        const memberDiv = document.createElement('div');
+        memberDiv.classList.add('team-member');
+
+        memberDiv.innerHTML = `
+            <img src="${member.photo}" alt="${member.name}">
+            <h3>${member.name}</h3>
+            <p><strong>Role:</strong> ${member.role}</p>
+            <p>${member.bio}</p>
+            <p><a href="${member.github}" target="_blank">GitHub</a></p>
+        `;
+        teamContainer.appendChild(memberDiv);
+    });
+}

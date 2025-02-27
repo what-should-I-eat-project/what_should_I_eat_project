@@ -521,6 +521,18 @@ border-radius: 1rem;
     background: linear-gradient(to right, #ef4642, #f77019);
 }
 
+
+.team-member {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
 @media (max-width: 850px) {
 .box {
  height: auto;
