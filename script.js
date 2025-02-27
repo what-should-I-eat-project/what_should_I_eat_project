@@ -279,13 +279,20 @@ const teamData = [
 ];
 
 const aboutUsBtn = document.querySelector(".AboutUsButton");
+
 aboutUsBtn.addEventListener('click', displayTeamInfo);
 
 
 
 function displayTeamInfo() {
     const teamContainer = document.getElementById('info');
+    const teamMember = document.createElement("div")
+    teamMember.classList.add("teams")
+    
+
+    teamContainer.className = 'team-container';
     teamContainer.innerHTML = ''; // Clear previous content
+    teamContainer.appendChild(teamMember)
     
 
 
