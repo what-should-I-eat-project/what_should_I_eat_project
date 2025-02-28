@@ -2,39 +2,47 @@
 /* main-color: #f77019 */
 /* scondr-color: #ef4642 */
 /* bg-color: #fef5ee */
+
+
+
+/* This is general Css */
 *{
     margin: center;
     padding: 0;
     box-sizing:content-box;
    
 }   
-   body {
-    font-family: Arial, Helvetica, sans-serif;
+body {
+    font-family: "Poppins", sans-serif;
     background-color: #FFF5EE;
     color: #17100f
+}
 
-   }
-   .hero {
+
+
+
+/* This is Hero section */
+.hero {
     text-align: center;
     padding: 40px;
 
 
 }   
-   .fa-solid{
+.fa-solid{
     color: #ff6f30;
-   }
+}
    
-   .hero h1 {
+.hero h1 {
     text-align: center;
     font-size: 2rem;
 
-   }
-   .hero p {
+}
+.hero p {
     margin-bottom: 20px;
 
-   }
+}
 
-   .btn {
+.btn {
     background-color: #ff6f30;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -44,27 +52,32 @@
     padding: 15px 25px;
 
 
-   }
-   .btn:hover {
+}
+.btn:hover {
     background-color: #ff4d00;
     transform: scale(1.05);
 
-   }
+}
+
+
 
   
-
-   .recipe-container {
+/* This is the display Recipe section */
+#savedRecipes{
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.recipe-container, #savedRecipes {
     display: flex;
     flex-direction: row;
     background-color: #fff;
     box-shadow: 0 5px rgb(234, 241, 241);
     width : 90%;
-    /* height: 600px; */
     margin: 0px 90px 30px 90px;
     border-radius: 15px;
     transition: all 0.3s;
-   }
-   .recipe-imag {
+}
+.recipe-imag, #savedRecipes img {
     width: 50%;
     height: auto;
     object-fit: cover;
@@ -72,76 +85,70 @@
     border-bottom-right-radius: 15px;
     border-top-left-radius: 15px;
 
-   }
-   .recipe-info {
+}
+.recipe-info {
+    display: flex;
     width: 50%;
     flex-direction: column;
-    margin-left: 30px;
+    padding: 20px;
    }
+   .categoryAndAreaDiv{
+    display: flex;
+    padding-bottom: 10px;
 
-   .recipe-info ul, .recipe-info ol {
-    padding-left: 20px ;
-   }
-   .video-tutorial {
-    margin-top: 15px;
-   }
+}
+.recipeArea{
+    padding: 5px 15px;
+    background-color: #ffd0b1;
+    border-radius: 15px;
+    color: #ff6600;
+    font-size: .9rem;
+    margin-right: 10px;
+}
+.recipeCategory{
+    padding: 5px 15px;
+    background-color: #ffcedc;
+    border-radius: 15px;
+    color: #ff006a;
+    font-size: .9rem;
+}
 
-   footer{
+footer{
     padding: 50px 20px 10px 20px;
     text-align: center;
-   }
-
-    .instructions-list{
-        padding-right: 50px;
-        font-size: 12px;
 }
-    .instructions-list li::marker{
+
+.instructions-list{
+    padding-right: 50px;
+    font-size: 12px;
+}
+.instructions-list li::marker{
     color:#ff4d00;
 }
-    .ingredients-list{
-        padding-right: 30px;
-        display: grid;
-        grid-template-columns: repeat(2, 50%);
-        grid-column-gap: 10px;
-        font-size: 12px;
+.ingredients-list{
+    padding-right: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-column-gap: 10px;
+    font-size: 12px;
        
-    }
+}
 
-    .ingredients-list li{
+.ingredients-list li{
         margin-bottom: 8px ;
-    }
+}
     .ingredients-list li::marker{
         color: #ff4d00;
-    }
+}
 
-    .video-tutorial{
+.video-tutorial{
         padding:0px 50px 30px 10px;
-    }
-   @media  (max-width: 768px){
-    .recipe-container {
-        flex-direction:  column;
-        align-items: center;
-        margin: 5px 30px 5px 30px;
-        height: 100%;
-    }
-    .recipe-imag{
-        width: 100%;
-        border-radius: 15px;
-    }
-    .recipe-info{
-        width: 100%;
-    }
-    .team-container{
-        display: flex;
-        flex-direction: column;
-    
-        
-   }
-   }
+        margin-top: 15px;
+}
       /* this hidden must be removed because we
        need to show both login/reg form and also 
        recipe gernerator. */
-   .auth-container.hidden{
+.auth-container.hidden{
     display: none;
 }
 /* this hidden must be removed because we
@@ -150,31 +157,13 @@
 .recipe-Wrapper.hidden{
     display: none;
 }
-.recipe-container {
- display: flex;
- flex-direction: row;
- background-color: #fff;
- box-shadow: 0 5px rgb(234, 241, 241);
- width : 90%;
- max-width: 1200px;
- padding: 40px;
- border-radius: 15px;
- transition: all 0.3s;
+#savedRecipes img{
+    padding-left: 20px;
+    padding-right: 10px;
 }
-.recipe-container img {
- width: 50%;
- height: auto;
- max-width: 600px; 
- object-fit: cover;
- border-radius: 15px;
-
-}
-.recipe-info {
- width: 50%;
- padding: 20px;
- display: flex;
- flex-direction: column;
- justify-content: space-around;
+#savedRecipes h2{
+    font-size: 0.8rem;
+    padding: 20px;
 }
 .recipe-info h2 {
  margin-bottom: 10px;
@@ -185,26 +174,11 @@
  margin-bottom: 15px;
  padding-left: 20px ;
 }
-.video-tutorial {
- margin-top: 15px;
-}
-@media  (max-width: 768px){
- .recipe-container {
-     flex-direction:  column;
-     align-items: center;
- }
- .recipe-container image{
-     width: 100%;
- }
- .recipe-info{
-     width: 100%;
- }
-}
- 
-
-/* Auth form */
 
 
+
+
+/* This is Login and Registration section */
 *,
 *::before,
 *::after {
@@ -213,10 +187,8 @@ margin: 0;
 box-sizing: border-box;
 }
 
-body,
-input {
-font-family: "Poppins", sans-serif;
-}
+
+
 
 .auth-container {
 width: 100%;
@@ -509,7 +481,7 @@ width: 1.1rem;
 background-color: #151111;
 border-radius: 1rem;
 }
-.save-recipe-btn {
+.save-recipe-btn{
     width: 200px;
     height: 43px;
     background: linear-gradient(to right, #f77019, #ef4642);
@@ -521,6 +493,20 @@ border-radius: 1rem;
     margin-bottom: 2rem;
     transition: 0.3s;
     margin: 0 auto; 
+    display: block; 
+}
+.view-SavedBtn {
+    width: 200px;
+    height: 43px;
+    background: linear-gradient(to right, #f77019, #ef4642);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 8rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    transition: 0.3s;
+    margin: 10px auto; 
     display: block; 
 }
 .save-recipe-btn:hover {
@@ -540,44 +526,87 @@ border-radius: 1rem;
     border-radius: 50%;
 }
 
-#info{
-   display: flex;
-   justify-content: center;
-   cursor: pointer;
-   
-}   
-.AboutUsButton {
-    display: flex;
-    background-color: #fb6728;
-    padding: 15px 20px;
-    cursor: pointer;
-    border-radius: 20px;
-    border-color: white;
-    text-align: center;
-   
 
+.aboutBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+.AboutUsButton {
+    
+    text-align: center;
+    width: 200px;
+    height: 43px;
+    background: linear-gradient(45deg, #f77019, #ef4642);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+    transition: 0.3s;
 } 
 .AboutUsButton:hover {
     background-color: #f8510a;
     transform: scale(1.0);
 
 }
+#info{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #ffe0d2;
+    
+ }   
 .team-container{
     background-color: #fff;
     margin: 0px 90px 30px 90px;
     width: 85;
     border-radius: 15px;
     gap: 5px;
+    padding: 10px;
     
     
+}
+.team-container a{
+    text-decoration: none;
+    color: #fff;
+    background-color: #f77019;
+    border-radius: 15px;
+    padding: 5px 15px;
 }
 .teams{
     border-style: none;
     gap: 10px;
 
 }
-   
+
+
+
+
+
+
+/* This is the part that makes the web responsive for different devices */
 @media (max-width: 850px) {
+.recipe-container {
+    flex-direction:  column;
+    align-items: center;
+    margin: 5px 30px 5px 30px;
+    height: 100%;
+}
+.recipe-imag{
+    width: 100%;
+    border-radius: 15px;
+}
+.recipe-info{
+    width: 100%;
+    }
+.team-container{
+    display: flex;
+    flex-direction: column;
+    
+        
+   }
 .box {
  height: auto;
  max-width: 550px;
@@ -669,7 +698,3 @@ form {
 }
 
 
-
-
-
-   

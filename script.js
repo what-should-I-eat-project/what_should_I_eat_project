@@ -1,3 +1,4 @@
+// This function fetchs data from the API
 function fetchData() {
     return axios.get('https://www.themealdb.com/api/json/v1/1/random.php')
         .then((response) => {
@@ -10,20 +11,24 @@ function fetchData() {
             console.error("Error fetching data:", error);
         });
 }
-function displayCard(data) {
 
+
+
+// This function displays suggested recipe 
+function displayCard(data) {
     // check if data received
     if (!data) {
         console.error("No data received to display!");
         return;
     }
+
     const recipeSection = document.querySelector(".recipe-display");
     recipeSection.innerHTML = '';
 
     // Create the recipe card container
     const recipeContainer = document.createElement('div');
     recipeContainer.className = 'recipe-container';
-
+    
     // Create the image element
     const recipeImage = document.createElement('img');
     recipeImage.className = 'recipe-imag';
@@ -34,6 +39,20 @@ function displayCard(data) {
     const recipeInfo = document.createElement('div');
     recipeInfo.className = 'recipe-info';
     recipeContainer.appendChild(recipeInfo);
+
+    const categoryAndAreaDiv=document.createElement('div')
+    categoryAndAreaDiv.className='categoryAndAreaDiv'
+    recipeInfo.append(categoryAndAreaDiv)
+
+    const recipeArea=document.createElement('p')
+    recipeArea.className='recipeArea'
+    recipeArea.innerText=data.strArea;
+    categoryAndAreaDiv.appendChild(recipeArea)
+
+    const recipeCategory=document.createElement('p')
+    recipeCategory.className='recipeCategory'
+    recipeCategory.innerText=data.strCategory
+    categoryAndAreaDiv.appendChild(recipeCategory)
 
     // Create the unordered list (ingredients)
     const unOrderlist = document.createElement('div');
@@ -102,7 +121,7 @@ function displayCard(data) {
         videoTutorial.appendChild(videoHeading);
 
         const videoFrame = document.createElement('iframe');
-        videoFrame.width = "500";
+        videoFrame.width = "400";
         videoFrame.height = "300";
         videoFrame.src = data.strYoutube.replace("watch?v=", "embed/");
         videoFrame.allowFullscreen = true;
@@ -117,14 +136,18 @@ function displayCard(data) {
     return recipeSection
 }
 
+
+
+// This function displays the fetched data to DOM
 function displayToDom() {
     fetchData()
         .then((recipe) => { displayCard(recipe) })
 }
 const button = document.querySelector(".btn");
-
 button.addEventListener('click', displayToDom);
 
+
+// This is login part
 const inputs = document.querySelectorAll(".input-field");
 const toggle_btn = document.querySelectorAll(".toggle");
 const main = document.querySelector(".auth-container");
@@ -219,6 +242,8 @@ const handleLogin = (e) => {
 
 document.querySelector(".sign-in-form").addEventListener("submit", handleLogin);
 
+
+// This is saving recipe part
 document.getElementById("save-recipe-btn").addEventListener("click", () => {
     const meal = JSON.parse(document.getElementById("mealSuggestion").dataset.meal);
     saveRecipe(meal);
@@ -235,9 +260,12 @@ function saveRecipe(recipe) {
     alert("Recipe saved");
 }
 
-// document.getElementById("viewSavedBtn").addEventListener("click", viewSavedRecipes);
+
+// This is view saved recipe
+document.getElementById("viewSavedBtn").addEventListener("click", viewSavedRecipes);
 
 function viewSavedRecipes() {
+    
     const users = JSON.parse(localStorage.getItem("users")) || {};
     if (!currentUser) {
         alert("You must be logged in to view saved recipes");
@@ -253,13 +281,16 @@ function viewSavedRecipes() {
       `).join("");
     savedRecipesDiv.classList.remove("hidden");
 }
-// The button section
+
+
+
+// About us section
 const teamData = [
     {
         name: "Maria Yusuf",
         role: "Team Lead / Card Designer",
         photo: "./img/IMG_5632.jpeg", 
-        github: "https://github.com/Mariayusuf12", // Add real GitHub links
+        github: "https://github.com/Mariayusuf12", 
         bio: "Passionate about design and development."
     },
     {
@@ -297,7 +328,6 @@ function displayTeamInfo() {
 
 
     teamData.forEach(member => {
-        console.log(member)
         const memberDiv = document.createElement('div');
         memberDiv.classList.add('team-member');
 
