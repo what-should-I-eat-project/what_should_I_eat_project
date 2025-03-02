@@ -16,11 +16,21 @@ function fetchData() {
 
 // This function displays suggested recipe 
 function displayCard(data) {
+    
     // check if data received
     if (!data) {
         console.error("No data received to display!");
         return;
     }
+
+    const saveButton = document.getElementById("save-recipe-btn");
+
+    // Remove any existing event listener
+    saveButton.replaceWith(saveButton.cloneNode(true));
+    const newSaveButton = document.getElementById("save-recipe-btn");
+
+    // Add the new event listener
+    newSaveButton.addEventListener('click', handleSaveRecipe(data));
 
     const recipeSection = document.querySelector(".recipe-display");
     recipeSection.innerHTML = '';
@@ -244,11 +254,13 @@ document.querySelector(".sign-in-form").addEventListener("submit", handleLogin);
 
 
 // This is saving recipe part
-document.getElementById("save-recipe-btn").addEventListener("click", () => {
-    const meal = JSON.parse(document.getElementById("mealSuggestion").dataset.meal);
-    saveRecipe(meal);
-});
 
+// Define the event handler function outside of displayCard
+function handleSaveRecipe(data) {
+    return function() {
+        saveRecipe(data);
+    };
+}
 function saveRecipe(recipe) {
     const users = JSON.parse(localStorage.getItem("users")) || {};
     if (!currentUser) {
@@ -289,7 +301,7 @@ const teamData = [
     {
         name: "Maria Yusuf",
         role: "Team Lead / Card Designer",
-        photo: "./img/IMG_5632.jpeg", 
+        photo: './img/image1.jpg', 
         github: "https://github.com/Mariayusuf12", 
         bio: "Passionate about design and development."
     },
@@ -303,7 +315,7 @@ const teamData = [
     {
         name: "Abdirahman",
         role: "Login Creator",
-        photo: "./img/abdirahman.jpg",
+        photo: "./img/image2.jpg",
         github: "https://github.com/Armanmoham23",
         bio: "Focused on authentication and security."
     }
